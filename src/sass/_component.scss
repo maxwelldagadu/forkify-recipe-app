@@ -1,0 +1,147 @@
+@use './base' as *;
+
+%btn{
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+  width: 14.5rem;
+  height: 4.2rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right bottom,$color-grad-1,$color-grad-2);
+  border-radius: 3rem;
+  transition: transform 0.3s;
+  cursor: pointer;
+
+  &:hover{
+    transform: scale(1.1);
+  }
+
+  & > *:first-child{
+    margin-right: 0.4rem;
+  }
+}
+
+.btn--tiny{
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  svg{
+    height: 100%;
+    width: 100%;
+    fill: $color-primary;
+    transition: all 0.3s;
+  }
+
+  &:hover svg{
+    fill: $color-grad-2;
+    transform: translateY(-1px);
+  }
+
+  &:active svg{
+    fill: $color-grad-2;
+    transform: translateY(0px);
+  }
+
+  &:not(:last-child){
+    margin: 0 1rem 0 1rem;
+  }
+}
+
+.btn--round{
+  height: 3rem;
+  width: 3rem;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right bottom,$color-grad-1,$color-grad-2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+  padding: 0.5rem ;
+
+  svg{
+    height: 2rem;
+    width: 2rem;
+    fill: #fff;
+  }
+
+  &:hover{
+    transform: scale(1.2,1.2);
+  }
+}
+
+.heading--2{
+  font-size: 2rem;
+  color: $color-primary;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  word-spacing: 1rem;
+  align-self: center;
+}
+
+.btn--small{
+  &,
+  &:link,
+  &:visited{
+    @extend %btn;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+  }
+
+  svg{
+    fill: #fff;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.spinner{
+  margin: 5rem auto;
+  justify-self: center;
+
+  svg{
+    width: 6rem;
+    height: 6rem;
+    fill: $color-primary;
+    animation: rotate-spin 2s infinite linear;
+  }
+}
+
+@keyframes rotate-spin{
+  0% {
+    transform: rotate(0);
+  }
+    
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.upload__btn{
+  @extend %btn;
+
+  position: relative;
+  left: 55%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  justify-self: center;
+
+  span{
+    margin: 0 auto;
+  }
+
+  svg{
+    fill: #fff;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 4rem;
+  }
+}

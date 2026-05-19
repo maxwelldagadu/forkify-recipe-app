@@ -1,0 +1,243 @@
+@use './base' as *;
+
+%errorMessage{
+  position: absolute;
+    line-height: 2.5rem;
+    display: flex;
+    width: 28.8%;
+    margin: 0 auto;
+    max-width: 60ch;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    visibility: visible;
+
+    svg{
+      fill: #ff0000;
+      height: 4rem;
+      width: 4rem;
+      margin-right: 1rem;
+    }
+
+    p{
+      font-family: inherit;
+      font-size: 1.5rem;
+      color: inherit;
+      font-weight: 600;
+      margin-left: 1rem;
+    }
+}
+
+
+.recipe{
+  grid-area: recipe;
+  background-color: $color-grey-light-1;
+  border-bottom-right-radius: 2rem;
+
+
+  &__message{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 10rem;
+    
+    svg{
+      fill: $color-primary;
+      height: 4rem;
+      width: 4rem;
+      margin-right: 1rem;
+    }
+
+    p{
+      font-family: inherit;
+      font-size: 1.5rem;
+      color: inherit;
+      font-weight: 600;
+    }
+  }
+
+  &__error{
+    @extend %errorMessage;
+    top: 25rem;
+  }
+
+  &__upload__error{
+    @extend %errorMessage;
+    bottom: 2.5rem;
+  }
+
+  /// FIGURE ///
+  
+  &__fig{
+    height: 32rem;
+    position: relative;
+
+    &::before{
+      display: block;
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left:0;
+      background-image: linear-gradient(to right bottom,$color-grad-1, $color-grad-2);
+      opacity: 0.4;
+    }
+  }
+
+  &__img{
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  &__title{
+    position: absolute;
+    font-family: inherit;
+    color: #fff;
+    top: 90%;
+    left: 10%;
+    font-weight: 600;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    transform: translate(100px,-80px) skewY(-6deg);
+    text-align: center;
+    line-height: 6rem;
+    max-width: 20ch;
+
+    span{
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      background-image: linear-gradient(to right bottom,$color-grad-1,$color-grad-2);
+      padding: 1.5rem 2rem;
+    }
+
+    @media only screen and (max-width: $bp-medium){
+      width: 70%;
+    }
+  }
+
+  /// DETAIL ///
+  
+  &__detail{
+    display: flex;
+    align-items: center;
+    padding: 10rem 8rem 3rem 8rem;
+  }
+
+  &__info{
+    display:flex;
+    align-items: center;
+
+    &:not(:last-child){
+      margin-right: 4rem;
+    }
+
+    &-icon{
+      width: 2rem;
+      height: 2rem;
+      fill: $color-primary;
+      margin-right: 1.5rem;
+    }
+
+    &-data{
+      margin-right: 0.5rem;
+      font-family: inherit;
+      color: inherit;
+      font-weight: 700;
+      font-size: 1.8rem;
+      
+    }
+
+    &-text{
+      font-family: inherit;
+      color: inherit;
+      font-weight: 100;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__info-buttons{
+    display: flex;
+    align-items: center;
+  }
+  
+  &__user-generated{
+    display: flex;
+    background-color: darken($color-grey-light-2, 2%);
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-left: auto;
+    margin-right: 1.7rem;
+    border-radius: 50%;
+
+    svg{
+      height: 2rem;
+      width: 2rem;
+      fill: $color-primary;
+    }
+  }
+
+  /// INGREDIENT ///
+  
+  &__ingredients{
+    padding: 5rem 8rem;
+    display: flex;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    flex-direction: column;
+    background-color: $color-grey-light-2;
+  }
+  
+  &__ingredient-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    gap: 2.5rem 3rem;
+  }
+
+  &__ingredient{
+    display: flex;
+    align-items: center;
+
+    svg{
+      fill: $color-primary;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__quantity{
+    margin-right: 0.5rem;
+  }
+
+  /// DIRECTION //
+  
+  &__direction{
+    display: none;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    padding: 5rem 8rem;
+
+    &--text{
+      line-height: 3rem;
+      text-align: center;
+      font-size: 1.8rem;
+      color: $color-grey-dark-2;
+      margin-bottom: 3rem;
+
+      span{
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: inherit;
+      }
+    }
+  }
+}
