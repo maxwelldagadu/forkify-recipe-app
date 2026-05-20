@@ -1,11 +1,11 @@
 
 // recipe data url
 
-const API_URL = 'https://forkify-api.jonas.io/api/v2/recipes/';
+const API_URL = 'https://forkify-api.herokuapp.com/api/v2/recipes/';
 
 const TIMEOUT_SECONDS = 10;
 
-const RECIPE_URL = 'https://forkify-api.jonas.io/api/v2/recipes?search=';
+const RECIPE_URL = 'https://forkify-api.herokuapp.com/api/v2/recipes/?search=';
 
 const RESULTS_PER_PAGE = 10;
 

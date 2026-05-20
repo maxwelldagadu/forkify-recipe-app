@@ -162,7 +162,7 @@ export const uploadRecipe = async function(userRecipe){
           // checks if the value array has 3 value
           if (checkIngredient.length !== 3) throw new Error('Please make sure your input follows the right format');
 
-          const [quantity,unit,description] = checkRecipe;
+          const [quantity,unit,description] = checkIngredient;
 
           return {quantity: quantity ? +quantity: '',unit: unit ? unit : '',description: description ? description: ''};
         })
@@ -179,7 +179,7 @@ export const uploadRecipe = async function(userRecipe){
 
     // Send the user created recipe to the API
     const sentData = await sendJSON(`${API_URL}?key=${API_KEY}`,recipe);
-    
+
     // Receive the recipe data sent back. Store it the sate recipe object
     state.recipe = createRecipeObject(sentData);
 
