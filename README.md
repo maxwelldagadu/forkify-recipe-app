@@ -5,7 +5,7 @@ This web-app showcases how your favorite recipes are been prepared.
 There's an extreme detail about what exact ingredients should be used
 and their prefered quantity to achieve your desired meal.
 
-![home page] (./src/img/app/shot-1.JPG)
+![home page](./src/img/app/shot-1.JPG)
 
 # Rendering a Recipe
 
